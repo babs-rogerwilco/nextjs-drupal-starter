@@ -8,7 +8,13 @@ package), Zod, pnpm. Layout inspiration: isuzu.co.za, restructured as
 ## Prerequisites
 
 - Node.js >= 20.9 (required by Next.js 16)
-- pnpm >= 9 - Run: `corepack enable && corepack prepare pnpm@latest --activate`
+- pnpm >= 9 
+
+Run: 
+
+```bash
+corepack enable && corepack prepare pnpm@latest --activate
+```
 
 ## Getting started
 

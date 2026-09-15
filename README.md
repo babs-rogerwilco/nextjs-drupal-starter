@@ -54,6 +54,50 @@ Install dev dependencies (Vitest, RTL, Storybook, Husky, Prettier, etc.):
 pnpm add -D vitest @vitejs/plugin-react @testing-library/react @testing-library/jest-dom @testing-library/user-event jsdom prettier eslint-config-prettier husky lint-staged @storybook/nextjs @storybook/react @storybook/addon-essentials @storybook/addon-interactions @chromatic-com/storybook playwright
 ```
 
+#### 2. Feature-Based Directory Structure
+
+Each feature folder (e.g. `features/navigation`, `features/offers`, etc.) contains its components, GraphQL queries, custom hooks, Vitest specs, Zod schemas, Storybook stories.
+
+```
+nextjs-drupal-starter/
+├── app/                      # Next.js App Router (pages & layouts)
+│   ├── layout.tsx
+│   ├── page.tsx
+│   └── api/
+├── features/                 # Modular feature-based structure
+│   ├── navigation/           # Header, Nav Menu, Footer
+│   │   ├── components/
+│   │   │   ├── Header.tsx
+│   │   │   ├── Header.module.scss
+│   │   │   ├── Header.test.tsx
+│   │   │   └── Header.stories.tsx
+│   │   └── navigation.graphql.ts
+│   ├── offers/               # Vehicle Offer Cards (referencing Isuzu UI)
+│   │   ├── components/
+│   │   │   ├── OfferCard.tsx
+│   │   │   ├── OfferCard.module.scss
+│   │   │   ├── OfferCard.test.tsx
+│   │   │   └── OfferCard.stories.tsx
+│   │   └── offers.types.ts
+│   └── enquiry-form/         # Form validation feature (Zod + React Hook Form)
+├── lib/                      # Shared utility functions & Drupal GraphQL client
+│   ├── drupal.ts             # next-drupal / GraphQL client configuration
+│   └── utils.ts
+├── styles/                   # Core Global Sass files
+│   ├── _variables.scss       # Design tokens (Isuzu Brand Colors, typography)
+│   ├── _breakpoints.scss     # Media query mixins
+│   ├── _mixins.scss          # Utility mixins
+│   └── _index.scss           # Main entry importing variables, breakpoints, & mixins
+├── public/
+├── .eslintrc.config.mjs
+├── .prettierrc
+├── vitest.config.ts
+├── vitest.setup.ts
+├── .storybook/
+├── package.json
+└── README.md
+```
+
 ---
 
 ## Learn More

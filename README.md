@@ -41,12 +41,17 @@ Install core dependencies:
  pnpm add sass radix-ui zod react-hook-form @hookform/resolvers graphql graphql-request next-drupal clsx test-exclude
 ```
 
-Some builds need to be allowed manually. Run:
+Some builds need to be allowed manually by running:
 
 ```bash
 pnpm approve-builds
-
 #Note: Space + Enter to select
+```
+
+Install dev dependencies (Vitest, RTL, Storybook, Husky, Prettier, etc.):
+
+```bash
+pnpm add -D vitest @vitejs/plugin-react @testing-library/react @testing-library/jest-dom @testing-library/user-event jsdom prettier eslint-config-prettier husky lint-staged @storybook/nextjs @storybook/react @storybook/addon-essentials @storybook/addon-interactions @chromatic-com/storybook playwright
 ```
 
 ---

@@ -27,8 +27,9 @@ pnpm test       # vitest watch mode (To run tests)
 
 #### 1. Project Initialization
 
+Initialize Next.js (App Router, TypeScript, ESLint, no src/ folder, no Tailwind, @import alias, use pnpm package manager): 
+
 ```bash
-# 1. Initialize Next.js (App Router, TypeScript, ESLint, no src/ folder, no Tailwind, @import alias, use pnpm package manager)
 pnpm create next-app nextjs-drupal-starter --ts --eslint --app --no-src-dir --no-tailwind --import-alias "@/*" --use-pnpm
 
 cd nextjs-drupal-starter

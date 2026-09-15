@@ -35,6 +35,20 @@ pnpm create next-app nextjs-drupal-starter --ts --eslint --app --no-src-dir --no
 cd nextjs-drupal-starter
 ```
 
+Install core dependencies:
+
+```bash
+ pnpm add sass radix-ui zod react-hook-form @hookform/resolvers graphql graphql-request next-drupal clsx test-exclude
+```
+
+Some builds need to be allowed manually. Run:
+
+```bash
+pnpm approve-builds
+
+#Note: Space + Enter to select
+```
+
 ---
 
 ## Learn More

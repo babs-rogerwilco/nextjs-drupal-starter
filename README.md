@@ -98,6 +98,29 @@ nextjs-drupal-starter/
 └── README.md
 ```
 
+Setup Husky & Lint-Staged:
+
+```bash
+npx husky init
+
+echo "pnpm lint-staged" > .husky/pre-commit
+```
+
+and add config to `package.json`:
+
+```json
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write",
+      "vitest related --run"
+    ],
+    "*.scss": [
+      "prettier --write"
+    ]
+  },
+```
+
 ---
 
 ## Learn More

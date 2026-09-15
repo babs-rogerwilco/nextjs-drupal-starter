@@ -1,24 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# nextjs-drupal-starter
 
-## Getting Started
+A feature-based [Next.js](https://nextjs.org) starter - App Router, Drupal with GraphQL, TypeScript, Sass, Storybook,
+Vitest + React Testing Library, ESLint, Prettier, Husky, Radix UI (primitives only, no theme
+package), Zod, pnpm. Layout inspiration: isuzu.co.za, restructured as
+`(vehicles)` / `(shopping-tools)` route groups.
 
-First, run the development server:
+## Prerequisites
+
+- Node.js >= 20.9 (required by Next.js 16)
+- pnpm >= 9 - Run: `corepack enable && corepack prepare pnpm@latest --activate`
+
+## Getting started
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install
+pnpm dev        # http://localhost:3000 (To see app)
+pnpm storybook  # http://localhost:6006 (To see component stories in isolation)
+pnpm test       # vitest watch mode (To run tests)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## How project was created
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### STEP 1: Core Setup, Architecture & Configuration
+
+#### 1. Project Initialization
+
+```bash
+# 1. Initialize Next.js (App Router, TypeScript, ESLint, no src/ folder, no Tailwind, @import alias, use pnpm package manager)
+pnpm create next-app nextjs-drupal-starter --ts --eslint --app --no-src-dir --no-tailwind --import-alias "@/*" --use-pnpm
+
+cd nextjs-drupal-starter
+```
+
+---
 
 ## Learn More
 

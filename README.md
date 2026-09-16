@@ -60,6 +60,8 @@ Install dev dependencies (Vitest, RTL, Storybook, Husky, Prettier, etc.):
 pnpm add -D vitest @vitejs/plugin-react @testing-library/react @testing-library/jest-dom @testing-library/user-event jsdom prettier eslint-config-prettier husky lint-staged @storybook/nextjs @storybook/react @storybook/addon-essentials @storybook/addon-interactions @chromatic-com/storybook playwright
 ```
 
+Congifure Storybook:
+
 #### 2. Feature-Based Directory Structure
 
 Each feature folder (e.g. `features/navigation`, `features/offers`, etc.) contains its components, GraphQL queries, custom hooks, Vitest specs, Zod schemas, Storybook stories.
@@ -126,6 +128,8 @@ and add config to `package.json`:
     ]
   },
 ```
+
+### STEP 2: 
 
 ---
 

@@ -1,0 +1,101 @@
+@use '@/styles' as *;
+
+.header {
+  width: 100%;
+  background-color: $color-white;
+  border-bottom: 1px solid $color-gray-border;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.container {
+  @include flex-between;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: $spacing-md $spacing-lg;
+}
+
+.logoLink {
+  text-decoration: none;
+
+  .logoText {
+    font-size: 1.875rem;
+    font-weight: $font-weight-bold;
+    color: $color-primary;
+    letter-spacing: -0.05em;
+  }
+}
+
+.navRoot {
+  display: none;
+
+  @include respond-to('desktop') {
+    display: block;
+  }
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xl;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navLink {
+  font-size: 0.875rem;
+  font-weight: $font-weight-bold;
+  color: $color-text-dark;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: $color-primary;
+  }
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: $spacing-lg;
+}
+
+.actionBtn {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: $color-text-dark;
+
+  .actionLabel {
+    font-size: 0.875rem;
+    font-weight: $font-weight-regular;
+    display: none;
+
+    @include respond-to('tablet') {
+      display: inline;
+    }
+  }
+
+  &:hover {
+    color: $color-primary;
+  }
+}
+
+.iconBtn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: $color-primary;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    color: $color-primary-hover;
+  }
+}

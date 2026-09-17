@@ -31,7 +31,7 @@ After adding components, run generator on any component to generate its tests an
 pnpm generate:auto features/navigation/components/footer/Footer.tsx
 ```
 
-On every commit, [https://typicode.github.io/husky/](husky), automatically lints commit messages, code, and run tests. This is to maintain quality code, reduce bugs and regressions, and spend less time on manual reviews.
+On every commit, [husky](https://typicode.github.io/husky/), automatically lints commit messages, code, and run tests. This is to maintain quality code, reduce bugs and regressions, and spend less time on manual reviews.
 
 ---
 

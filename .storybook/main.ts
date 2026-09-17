@@ -23,13 +23,18 @@ const config: StorybookConfig = {
       ...config,
       define: {
         ...config.define,
-        'process.env': {},
+        // Injects global process.env so next/link and next/navigation don't throw ReferenceErrors
+        'process.env': process.env,
+        'process.env.__NEXT_IMAGE_OPTS': JSON.stringify({
+          unoptimized: true,
+        }),
       },
       resolve: {
         ...config.resolve,
         alias: {
           ...config.resolve?.alias,
           '@': path.resolve(__dirname, '../'),
+          'next/image': path.resolve(__dirname, './next-image-mock.tsx'),
         },
       },
     };

@@ -25,6 +25,14 @@ pnpm storybook  # http://localhost:6006 (To see component stories in isolation)
 pnpm test       # vitest watch mode (To run tests)
 ```
 
+After adding components, run generator on any component to generate its tests and Storybook stories, e.g. 
+
+```bash
+pnpm generate:auto features/navigation/components/footer/Footer.tsx
+```
+
+On every commit, [https://typicode.github.io/husky/](husky), automatically lints commit messages, code, and run tests. This is to maintain quality code, reduce bugs and regressions, and spend less time on manual reviews.
+
 ---
 
 ## How project was created
@@ -62,7 +70,9 @@ pnpm add -D vitest @vitejs/plugin-react @testing-library/react @testing-library/
 
 Congifure Storybook:
 
-# Note for adding Storybook: When prompted, agree to install AI features (MCP addons and prompt suggestions) and Playwright with Chromium
+Note for adding Storybook: When prompted, agree to install AI features (MCP addons and prompt suggestions) and Playwright with Chromium
+
+```bash
 pnpm add -D storybook@latest
 ```
 

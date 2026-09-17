@@ -62,6 +62,28 @@ pnpm add -D vitest @vitejs/plugin-react @testing-library/react @testing-library/
 
 Congifure Storybook:
 
+# Note for adding Storybook: When prompted, agree to install AI features (MCP addons and prompt suggestions) and Playwright with Chromium
+pnpm add -D storybook@latest
+```
+
+Run this to approve some packages manually:
+
+```bash
+pnpm approve-builds
+```
+
+Initialize Storybook:
+
+```bash
+pnpm exec storybook init
+```
+
+To finalize setting up with AI, run the following command. It generates a local configuration file so AI tools (like Gemini) can directly query your Storybook registry, inspect your UI components, and automatically generate stories for you in real time:
+
+```bash
+pnpm exec storybook skills setup
+```
+
 #### 2. Feature-Based Directory Structure
 
 Each feature folder (e.g. `features/navigation`, `features/offers`, etc.) contains its components, GraphQL queries, custom hooks, Vitest specs, Zod schemas, Storybook stories.
@@ -129,7 +151,28 @@ and add config to `package.json`:
   },
 ```
 
-### STEP 2: 
+### STEP 2: Automating Storybook stories and Vitest Unit tests
+
+Install Google Gen AI SDK:
+
+```bash
+pnpm add -D @google/genai
+```
+
+- Create `scripts/gemini-autogen.ts` in root directory.
+- Add `generate:auto` to the scripts in `package.json`.
+- Installed `tsx` via `pnpm add -D tsx` so Node can execute .ts scripts directly.
+
+Add Gemini API Key:
+```
+GEMINI_API_KEY=my_gemini_api_key_here
+```
+
+Run generator on any component to generate tests and Storybook stories, e.g. 
+
+```bash
+pnpm generate:auto features/navigation/components/footer/Footer.tsx
+```
 
 ---
 

@@ -22,6 +22,7 @@ export default function MockImage({
   ...props
 }: MockImageProps) {
   return (
+    /* eslint-disable-next-line @next/next/no-img-element */
     <img
       src={typeof src === 'object' && src !== null ? (src as { src: string }).src : src}
       alt={alt}

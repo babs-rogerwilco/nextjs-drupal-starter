@@ -5,17 +5,23 @@ import { describe, it, expect, vi } from 'vitest';
 import OfferCard, { OfferCardProps } from './OfferCard';
 
 // Mock next/image
+// Mock next/image for Vitest DOM tests
+// Mock next/image for Vitest DOM tests
 vi.mock('next/image', () => ({
-  default: (
-    props: React.ImgHTMLAttributes<HTMLImageElement> & {
-      fill?: boolean;
-      priority?: boolean;
-      sizes?: string;
-    }
-  ) => {
-    const { fill, priority, sizes, ...rest } = props;
-    return <img {...rest} />;
-  },
+  default: ({
+    src,
+    alt,
+    _fill,
+    _priority,
+    _sizes,
+    ...props
+  }: {
+    src: string;
+    alt?: string;
+    _fill?: boolean;
+    _priority?: boolean;
+    _sizes?: string;
+  }) => <img src={src} alt={alt || ''} {...props} />,
 }));
 
 describe('OfferCard Component', () => {
